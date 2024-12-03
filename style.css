@@ -126,119 +126,95 @@ h1 {
   transform: translateY(2px);
 }
 
-/* Keyboard Styles */
+/* General Keyboard Styles */
 #keyboard {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-gap: 10px;
+  grid-gap: 8px;
   justify-content: center;
   margin: 20px auto;
   max-width: 550px;
 }
 
 .key {
-  padding: 15px;
-  font-size: 18px;
+  padding: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   background: #444;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.key.correct {
+  background-color: #b59f3b; /* Gold-like color */
+  color: #fff;
+}
+
+.key.present {
+  background-color: #787c7e; /* Dark gray for present */
+  color: #fff;
+}
+
+.key.absent {
+  background-color: #3a3a3c; /* Darker gray for absent */
+  color: #fff;
 }
 
 .key:hover {
-  background-color: #666;
   transform: scale(1.1);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  background-color: #555;
 }
 
 .key:active {
-  background-color: #222;
   transform: scale(1);
 }
 
 .key.enter {
-  grid-column: span 2; /* Make the Enter key wider */
-  background-color: #2575fc;
+  grid-column: span 2;
+  background-color: #2575fc; /* Blue color */
   color: #fff;
 }
 
 .key.backspace {
-  grid-column: span 2; /* Make the Backspace key wider */
-  background-color: #ff6b6b;
+  grid-column: span 2;
+  background-color: #ff6b6b; /* Red for Backspace */
   color: #fff;
   text-align: center;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  #grid {
-    grid-template-columns: repeat(5, 60px);
-    grid-gap: 12px;
-  }
-
-  .tile {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 24px;
-  }
-
   #keyboard {
     grid-template-columns: repeat(8, 1fr);
-    grid-gap: 8px;
+    grid-gap: 6px;
   }
 
   .key {
     padding: 10px;
     font-size: 14px;
   }
-
-  #submit-button,
-  #new-game-button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  h1 {
-    font-size: 2.5em;
-  }
-
-  #game-container {
-    padding: 20px;
-  }
 }
 
 @media (max-width: 480px) {
-  #grid {
-    grid-template-columns: repeat(5, 50px);
-    grid-gap: 8px;
-  }
-
-  .tile {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 18px;
-  }
-
   #keyboard {
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 6px;
+    grid-gap: 4px;
   }
 
   .key {
     padding: 8px;
     font-size: 12px;
   }
+}
+
 
   #submit-button,
   #new-game-button {
-    width: 100%; /* Stack buttons for smaller screens */
+    width: 50%; /* Stack buttons for smaller screens */
     font-size: 12px;
     padding: 6px 12px;
   }
@@ -246,7 +222,7 @@ h1 {
   h1 {
     font-size: 1.5em;
   }
-}
+
 
 /* Animations */
 @keyframes fadeIn {
