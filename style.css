@@ -1,0 +1,294 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#game-container {
+  width: 90%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-out;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Grid Styles */
+#grid {
+  display: grid;
+  grid-template-columns: repeat(5, 70px);
+  grid-gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tile {
+  width: 70px;
+  height: 70px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 70px;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tile.correct {
+  background-color: #78c478;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(0, 255, 0, 0.4);
+}
+
+.tile.present {
+  background-color: #f3c237;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(255, 255, 0, 0.4);
+}
+
+.tile.absent {
+  background-color: #ccc;
+  color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+#submit-button,
+#new-game-button {
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 10px 5px;
+}
+
+#submit-button:hover,
+#new-game-button {
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff6b6b, #ff4d4d); /* Red gradient */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 10px 5px;
+}
+
+#new-game-button:hover {
+  background: linear-gradient(to right, #ff4d4d, #ff6b6b); /* Hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#new-game-button:active {
+  transform: translateY(2px);
+}
+
+
+#submit-button:active,
+#new-game-button:active {
+  transform: translateY(2px);
+}
+
+/* Keyboard Styles */
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 550px;
+}
+
+.key {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.key:hover {
+  background-color: #666;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.key:active {
+  background-color: #222;
+  transform: scale(1);
+}
+
+.key.enter {
+  grid-column: span 2; /* Make the Enter key wider */
+  background-color: #2575fc;
+  color: #fff;
+}
+
+.key.backspace {
+  grid-column: span 2; /* Make the Backspace key wider */
+  background-color: #ff6b6b;
+  color: #fff;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #grid {
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 12px;
+  }
+
+  .tile {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+  }
+
+  #keyboard {
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 8px;
+  }
+
+  .key {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #submit-button,
+  #new-game-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  #game-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #grid {
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 8px;
+  }
+
+  .tile {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
+
+  #keyboard {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 6px;
+  }
+
+  .key {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  #submit-button,
+  #new-game-button {
+    width: 100%; /* Stack buttons for smaller screens */
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Jumpy Animation */
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Class to trigger the jump animation */
+.tile.jump {
+  animation: jump 0.5s ease-out;
+}
