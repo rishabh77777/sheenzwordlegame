@@ -188,6 +188,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  #game-container {
+    width : 50%
+  }
+
   #keyboard {
     grid-template-columns: repeat(8, 1fr);
     grid-gap: 6px;
@@ -200,6 +204,11 @@ h1 {
 }
 
 @media (max-width: 480px) {
+
+  #game-container {
+    width : 50%
+  }
+  
   #keyboard {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 4px;
