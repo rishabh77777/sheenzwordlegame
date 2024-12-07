@@ -268,3 +268,16 @@ h1 {
 .tile.jump {
   animation: jump 0.5s ease-out;
 }
+
+@keyframes celebrate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.celebrate {
+  animation: celebrate 1s ease-in-out;
+}

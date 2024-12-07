@@ -191,6 +191,17 @@ async function checkGuess() {
     updateTileColors();
     if (guess === targetWord) {
         message.textContent = "Great! You guessed the word!";
+        
+        // Trigger celebration animation
+        const grid = document.getElementById("grid");
+        grid.classList.add("celebrate");
+
+        // Optional: Trigger confetti effect
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
     } else if (currentRow === maxAttempts) {
         message.textContent = `Game Over! The word was: ${targetWord}`;
     }
