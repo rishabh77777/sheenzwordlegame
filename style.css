@@ -35,7 +35,7 @@ body {
 
 h1 {
   font-size: clamp(1.5rem, 5vw, 3rem); /* Using rem as the upper bound for consistency */
-  margin-bottom: 1.25rem; /* Instead of 20px, use rem for better scaling */
+  margin-bottom: 0.25rem; /* Instead of 20px, use rem for better scaling */
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
