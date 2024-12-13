@@ -90,17 +90,19 @@ function setupKeyListeners() {
     document.addEventListener("keydown", handleKeyInput);
 }
 
-function showMessage(text, type) {
+function showMessage(text, type, persistent) {
     const message = document.getElementById("message");
-    message.textContent = text;
-    message.className = `message`; // Add type and animation
+    message.textContent = text; // Add type and animation
+    message.className = `message ${type}`;
     message.style.display = "block"; // Make the message visible
 
-    // Hide the message after 3 seconds
+    // Hide the message after 1.5 seconds
+    if (!persistent){
     setTimeout(() => {
         message.style.display = "none";
         message.className = "message"; // Reset class
     }, 1500);
+    }
 }
 
 // Handle key input
@@ -192,13 +194,13 @@ async function checkGuess() {
     const message = document.getElementById("message");
 
     if (guess.length !== 5) {
-        showMessage("Guess must be 5 letters!");
+        showMessage("Guess must be 5 letters!", false);
         return;
     }
 
     const isValid = await validateWord(guess);
     if (!isValid) {
-        showMessage("Not In Dictionary!");
+        showMessage("Not In Dictionary!", false);
         return;
     }
 
@@ -217,7 +219,7 @@ async function checkGuess() {
             origin: { y: 0.6 },
         });
     } else if (currentRow === maxAttempts) {
-        message.textContent = `Game Over! The word was: ${targetWord}`;
+        showMessage(`GameOver: Word - ${targetWord}`, true)
     }
 }
 
