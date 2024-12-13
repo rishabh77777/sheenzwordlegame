@@ -55,9 +55,9 @@ h1 {
   grid-template-columns: repeat(5, clamp(3rem, 5vw, 4.375rem));
   
   /* Convert gap and margins to rem units for better scaling */
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .tile {
