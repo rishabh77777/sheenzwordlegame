@@ -90,6 +90,19 @@ function setupKeyListeners() {
     document.addEventListener("keydown", handleKeyInput);
 }
 
+function showMessage(text, type) {
+    const message = document.getElementById("message");
+    message.textContent = text;
+    message.className = `message`; // Add type and animation
+    message.style.display = "block"; // Make the message visible
+
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+        message.style.display = "none";
+        message.className = "message"; // Reset class
+    }, 1500);
+}
+
 // Handle key input
 function handleKeyInput(event) {
     const key = event.key || event.target.dataset.key;
@@ -107,8 +120,7 @@ function handleKeyInput(event) {
         if (currentCol === 5) {
             checkGuess();
         } else {
-            document.getElementById("message").textContent =
-                "Complete your guess before submitting!";
+            showMessage("Complete Your Guess!")
         }
         return;
     }
@@ -180,13 +192,13 @@ async function checkGuess() {
     const message = document.getElementById("message");
 
     if (guess.length !== 5) {
-        message.textContent = "Guess must be 5 letters!";
+        showMessage("Guess must be 5 letters!");
         return;
     }
 
     const isValid = await validateWord(guess);
     if (!isValid) {
-        message.textContent = "Not in Dictionary!";
+        showMessage("Not In Dictionary!");
         return;
     }
 
@@ -201,7 +213,7 @@ async function checkGuess() {
         // Optional: Trigger confetti effect
         confetti({
             particleCount: 100,
-            spread: 70,
+            spread: 100,
             origin: { y: 0.6 },
         });
     } else if (currentRow === maxAttempts) {
