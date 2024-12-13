@@ -90,10 +90,10 @@ function setupKeyListeners() {
     document.addEventListener("keydown", handleKeyInput);
 }
 
-function showMessage(text, type, persistent) {
+function showMessage(text, persistent) {
     const message = document.getElementById("message");
     message.textContent = text; // Add type and animation
-    message.className = `message ${type}`;
+    message.className = `message`;
     message.style.display = "block"; // Make the message visible
 
     // Hide the message after 1.5 seconds
@@ -206,7 +206,7 @@ async function checkGuess() {
 
     updateTileColors();
     if (guess === targetWord) {
-        message.textContent = "You Won!!";
+        showMessage("You Won!!", true)
         
         // Trigger celebration animation
         const grid = document.getElementById("grid");
