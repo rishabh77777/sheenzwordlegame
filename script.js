@@ -186,13 +186,13 @@ async function checkGuess() {
 
     const isValid = await validateWord(guess);
     if (!isValid) {
-        message.textContent = "Not in word list!";
+        message.textContent = "Not in Dictionary!";
         return;
     }
 
     updateTileColors();
     if (guess === targetWord) {
-        message.textContent = "Great! You guessed the word!";
+        message.textContent = "You Won!!";
         
         // Trigger celebration animation
         const grid = document.getElementById("grid");
