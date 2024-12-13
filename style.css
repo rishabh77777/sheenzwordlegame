@@ -237,7 +237,7 @@ h1 {
 
 .keyboard-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   justify-content: center;
 }
 .key {
