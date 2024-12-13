@@ -242,10 +242,10 @@ h1 {
 }
 .key {
   /* 16px ~ 1rem */
-  padding: 0.5rem;
+  padding: 0.4rem;
 
   /* 16px ~ 1rem */
-  font-size: 0.75rem;
+  font-size: 0.70rem;
 
   font-weight: bold;
   text-align: center;
@@ -364,7 +364,7 @@ h1 {
 
   .key {
     /* 8px ~ 0.5rem */
-    padding: 0.35rem;
+    padding: 0.30rem;
     /* 12px ~ 0.75rem */
     font-size: 0.7rem;
   }
