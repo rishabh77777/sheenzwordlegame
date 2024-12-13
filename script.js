@@ -60,7 +60,7 @@ function createKeyboard() {
   
     const firstRow = [..."QWERTYUIOP"];
     const secondRow = [..."ASDFGHJKL"];
-    const thirdRow = [..."ZXCVBNM", "Backspace"];
+    const thirdRow = ["Enter",..."ZXCVBNM", "Backspace"];
   
     const createKeyRow = (rowKeys) => {
       const rowElement = document.createElement("div");
