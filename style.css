@@ -235,22 +235,19 @@ h1 {
 
 /* General Keyboard Styles */
 #keyboard {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-
-  /* Convert 8px gap to rem:
-     8px ~ 0.5rem */
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-
   justify-content: center;
-
-  /* Convert 20px margin to rem:
-     20px ~ 1.25rem */
+  align-items: center;
   margin: 1.25rem auto;
-
-  /* Convert 700px max-width to rem:
-     700px / 16 = 43.75rem */
   max-width: 43.75rem;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 .key {
   /* 16px ~ 1rem */

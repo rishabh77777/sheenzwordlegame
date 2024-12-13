@@ -54,34 +54,36 @@ function createGrid() {
     }
 }
 
-// Create the on-screen keyboard
 function createKeyboard() {
     const keyboard = document.getElementById("keyboard");
+    keyboard.innerHTML = ""; // Clear any existing content
+  
     const firstRow = [..."QWERTYUIOP"];
     const secondRow = [..."ASDFGHJKL"];
     const thirdRow = ["Backspace", ..."ZXCVBNM"];
-
-    const addKeys = (row) => {
-        row.forEach((key) => {
-            const keyElement = document.createElement("button");
-            keyElement.textContent = key === "Backspace" ? "⌫" : key;
-            keyElement.classList.add("key");
-            if (key === "Enter") keyElement.classList.add("enter");
-            if (key === "Backspace") keyElement.classList.add("backspace");
-            keyElement.dataset.key = key;
-            keyElement.addEventListener("click", (e) => {
-                handleKeyInput(e);
-            });
-            keyboard.appendChild(keyElement);
-        });
+  
+    const createKeyRow = (rowKeys) => {
+      const rowElement = document.createElement("div");
+      rowElement.classList.add("keyboard-row");
+      rowKeys.forEach((key) => {
+        const keyElement = document.createElement("button");
+        keyElement.textContent = key === "Backspace" ? "⌫" : key;
+        keyElement.classList.add("key");
+        if (key === "Enter") keyElement.classList.add("enter");
+        if (key === "Backspace") keyElement.classList.add("backspace");
+        keyElement.dataset.key = key;
+        keyElement.addEventListener("click", handleKeyInput);
+        rowElement.appendChild(keyElement);
+      });
+      return rowElement;
     };
-
-    addKeys(firstRow);
-    keyboard.appendChild(document.createElement("br"));
-    addKeys(secondRow);
-    keyboard.appendChild(document.createElement("br"));
-    addKeys(thirdRow);
-}
+  
+    // Append rows
+    keyboard.appendChild(createKeyRow(firstRow));
+    keyboard.appendChild(createKeyRow(secondRow));
+    keyboard.appendChild(createKeyRow(thirdRow));
+  }
+  
 
 // Set up keyboard listeners for direct typing
 function setupKeyListeners() {
