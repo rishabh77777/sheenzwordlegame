@@ -99,7 +99,7 @@ h1 {
 .tile.correct {
   background-color: #78c478;
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1);
 
   /* Convert box-shadow from px to rem for consistency:
      8px ~ 0.5rem, 15px ~ 0.9375rem
@@ -111,7 +111,7 @@ h1 {
 .tile.present {
   background-color: #f3c237;
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1);
   
   /* Convert box-shadow from px to rem:
      8px ~ 0.5rem, 15px ~ 0.9375rem
@@ -121,7 +121,7 @@ h1 {
 
 
 .tile.absent {
-  background-color: #ccc;
+  background-color: #3f3737;
   color: #fff;
   /* Convert box-shadow units to rem:
      4px ~ 0.25rem, 12px ~ 0.75rem
