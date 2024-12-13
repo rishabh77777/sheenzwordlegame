@@ -29,10 +29,7 @@ body {
   padding: 2rem; /* Using relative units for better scaling */
   backdrop-filter: blur(10px);
   animation: fadeIn 1s ease-out;
-
   /* Allow the container to scroll internally on very small screens */
-  max-height: 90vh;
-  overflow-y: auto;
 }
 
 
@@ -380,6 +377,12 @@ h1 {
     gap: 0.25rem;
     justify-content: center;
   }
+  #submit-button, #new-game-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.25rem;
+    width: auto;
+  }
 }
 
 #submit-button {
@@ -419,6 +422,7 @@ h1 {
     .key, #submit-button, #new-game-button {
       box-shadow: none;
       transform: none;
+      font-size: 0.55rem;
     }
   }
   
