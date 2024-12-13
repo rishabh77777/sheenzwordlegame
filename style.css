@@ -241,7 +241,8 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 1.25rem auto;
-  max-width: 43.75rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .keyboard-row {
@@ -251,10 +252,10 @@ h1 {
 }
 .key {
   /* 16px ~ 1rem */
-  padding: 1rem;
+  padding: 0.5rem;
 
   /* 16px ~ 1rem */
-  font-size: 1rem;
+  font-size: 0.75rem;
 
   font-weight: bold;
   text-align: center;
@@ -273,7 +274,7 @@ h1 {
   transition: background-color 0.3s, transform 0.2s;
 
   /* 44px ~ 2.75rem */
-  min-width: 2.75rem;
+  min-width: 2rem;
   min-height: 2.75rem;
 }
 
@@ -373,9 +374,9 @@ h1 {
 
   .key {
     /* 8px ~ 0.5rem */
-    padding: 0.5rem;
+    padding: 0.4rem;
     /* 12px ~ 0.75rem */
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
