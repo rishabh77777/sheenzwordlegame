@@ -16,7 +16,7 @@ body {
   align-items: center;
 
   /* Prevent horizontal scrolling on smaller devices */
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 
@@ -486,3 +486,4 @@ h1 {
 .celebrate {
   animation: celebrate 1s ease-in-out;
 }
+
