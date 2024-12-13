@@ -219,7 +219,7 @@ async function checkGuess() {
             origin: { y: 0.6 },
         });
     } else if (currentRow === maxAttempts) {
-        showMessage(`GameOver: Word - ${targetWord}`, true)
+        showMessage(`GameOver: Word - ${targetWord.toUpperCase()}`, true)
     }
 }
 

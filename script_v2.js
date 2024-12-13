@@ -210,7 +210,7 @@ async function checkGuess() {
             origin: { y: 0.6 },
         });
     } else if (currentRow === maxAttempts) {
-        showMessage(`Game Over! The word was: ${targetWord}`, true)
+        showMessage(`Game Over! The word was: ${targetWord.toUpperCase()}`, true)
     }
 }
 
