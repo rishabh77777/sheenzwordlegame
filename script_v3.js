@@ -255,7 +255,7 @@ async function checkGuess() {
         });
         setTimeout(() => showPlayAgainModal("Congratulations! Want to play again?"), 2000);
     } else if (currentRow === maxAttempts) {
-        showMessage(`Game Over:${targetWord.toUpperCase()}`, true);
+        showMessage(`Game Over: ${targetWord.toUpperCase()}`, true);
         setTimeout(() => showPlayAgainModal("Game Over! Want to try again?"), 2000);
     }
 }
